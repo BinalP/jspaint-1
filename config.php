@@ -16,13 +16,15 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-include("config.php");
 
-function connetti_al_db() {
-	global $db_host, $db_user, $db_pass, $db_name;
-	$connessione = mysql_connect($db_host, $db_user, $db_pass)
-	       or die("Connection refused by database<br>" . mysql_error() . "<br>(" . $db_user . ")");
-	mysql_select_db($db_name) or die("Database selection unsuccessful<br>" . mysql_error());
-	return $connessione;
-}
+$db_host = "your host here, probably localhost";
+$db_user = "your db user here";
+$db_pass = "your db password here";
+$db_name = "your db name here";
+
+$site_host = "http://your site url goes here.com";
+$app_root = "http://root of this script/goes/here";
+$viewer = "http://your site url here/with the path to/view.php";
+
+
 ?>

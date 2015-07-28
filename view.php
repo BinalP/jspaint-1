@@ -18,6 +18,7 @@
 */
 
 include("inc_db.php");
+include("config.php");
 
 // tool types
 define('LINE', 0 );
@@ -116,12 +117,12 @@ foreach( $data as $index => $instr ) {
 $pixel->setColor("white");
 $draw->setStrokeColor($pixel);
 $draw->setStrokeWidth(0.9);
-$draw->setFont('FreeMono.ttf');
+$draw->setFont('fonts/FreeMono.ttf');
 $draw->setFontSize( 12 );
-$image->annotateimage( $draw, 229, $im_height-2, 0, "http://yesterdaysforecasts.heliohost.org" );
+$image->annotateimage( $draw, 229, $im_height-2, 0, $site_host );
 $pixel->setColor("gray");
 $draw->setStrokeColor($pixel);
-$image->annotateimage( $draw, 230, $im_height-3, 0, "http://yesterdaysforecasts.heliohost.org" );
+$image->annotateimage( $draw, 230, $im_height-3, 0, $site_host );
 
 
 $image->drawImage($draw);

@@ -98,8 +98,7 @@
 <div id="savedimage" style="display:none;">
 	Image link: <span id="loading" style="display:none;"><img src="imgs/wait.gif"></span><br>
 
-	For IM or emails: <input id="imageurl" type="text" onClick="this.focus(); this.select();"><br>
-	BBCode for forums: <input id="imageurl_bbcode" type="text" onClick="this.focus(); this.select();"><br>
+	<input id="imageurl" type="text" onClick="this.focus(); this.select();"><br>
 	<a id="imageurl_a" href="#">Direct link to this image</a><br>
 
 	<!-- <img id="image" src=""> -->

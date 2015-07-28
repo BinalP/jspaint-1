@@ -23,6 +23,17 @@
 	insertion: timestamp
 	lastsaw: timestamp
 	code: text (hopefully big enough, a line may be around 100 bytes)
+
+
+CREATE DATABASE jspaint;
+REATE TABLE IF NOT EXISTS `paintings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `insertion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastsaw` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `code` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 */
 include("inc_db.php");
 
@@ -42,6 +53,6 @@ if( $decoded == null || gettype($decoded) != "array" ) {
 connetti_al_db();
 $data = mysql_real_escape_string($data);
 mysql_query("INSERT INTO paintings VALUES ( NULL, NOW(), NULL, \"$data\" );");
-echo mysql_insert_id();
+echo $viewer . "?" . mysql_insert_id();
 
 ?>

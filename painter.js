@@ -56,18 +56,15 @@ saveLink = function() {
 		method: "post",
 		onSuccess: function(t) {
 			$("loading").style.display="none";
-			var imagelink = "http://yesterdaysforecasts.heliohost.org/paint/view.php?" + t.responseText;
+			var imagelink = t.responseText;
 			$('imageurl_error').innerHTML = "";
 			$('imageurl').value = imagelink;
-			$('imageurl_bbcode').value = "[img]" + imagelink + "[/img]";
 			$('imageurl_a').href = imagelink;
-			//$('imageurl').update( "http://yesterdaysforecasts.heliohost.org/paint/view.php?" + t.responseText );
 		},
 		onFailure: function(t) {
 			$("loading").style.display="none";
 			$('imageurl_error').innerHTML = "Error: " + t.responseText;
 			$('imageurl').value = "";
-			$('imageurl_bbcode').value = "";
 			$('imageurl_a').href = "";
 		}
 	});
